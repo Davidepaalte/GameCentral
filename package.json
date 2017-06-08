@@ -1,0 +1,15 @@
+{
+  "name": "gamecentral",
+  "version": "1.0.0",
+  "description": "All your games in one place.",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "author": "Davide Teixeira",
+  "license": "ISC",
+  "dependencies": {
+    "electron": "^1.6.10",
+    "steamid": "^1.1.0"
+  }
+}

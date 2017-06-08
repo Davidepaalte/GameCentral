@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>GameCentral</title>
+    <link rel="stylesheet" href="https://bootswatch.com/superhero/bootstrap.min.css" />
+  </head>
+  <body>
+    <h1>My App</h1>
+    <div id="output"></div>
+  </body>
+  <script>
+    // STEAM ID API
+    var SteamID = require('steamid');
+    var sid = SteamID.fromIndividualAccountID(83485388);
+
+    var apiKey = "F1D8AE622347C33F3040EFB7EB84FC19";
+    var include_appinfo = true;
+    var userId = sid.getSteamID64();
+    var format = "json";
+
+    var getOwnedGames = "http://api.steampowered.com/IPlayerService/GetOwnedGames/v0001/?key="+apiKey
+    +"&include_appinfo="+include_appinfo
+    +"&steamid="+userId
+    +"&format="+format;
+
+    console.log(getOwnedGames);
+
+    require('./renderer.js');
+  </script>
+</html>
