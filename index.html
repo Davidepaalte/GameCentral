@@ -10,6 +10,12 @@
     <div id="output"></div>
   </body>
   <script>
+	var whereis = require('whereis');
+	whereis('/R C:\\ chrome.exe', function(err, path) {
+	  console.log(err);
+	  console.log(path);
+	});
+  
     // STEAM ID API
     var SteamID = require('steamid');
     var sid = SteamID.fromIndividualAccountID(83485388);
