@@ -10,27 +10,7 @@
     <div id="output"></div>
   </body>
   <script>
-	var whereis = require('whereis');
-	whereis('/R C:\\ chrome.exe', function(err, path) {
-	  console.log(err);
-	  console.log(path);
-	});
-  
-    // STEAM ID API
-    var SteamID = require('steamid');
-    var sid = SteamID.fromIndividualAccountID(83485388);
-
-    var apiKey = "F1D8AE622347C33F3040EFB7EB84FC19";
-    var include_appinfo = true;
-    var userId = sid.getSteamID64();
-    var format = "json";
-
-    var getOwnedGames = "http://api.steampowered.com/IPlayerService/GetOwnedGames/v0001/?key="+apiKey
-    +"&include_appinfo="+include_appinfo
-    +"&steamid="+userId
-    +"&format="+format;
-
-    console.log(getOwnedGames);
+	require('./steam.js');
 
     require('./renderer.js');
   </script>
