@@ -102,9 +102,9 @@ function getSteamPath(callback) {
 	else {
 		var whereis = require('whereis');
 
-		whereis('/R "C:\\Program Files (x86)" Steam.exe', function(err, path) {
+		whereis('C:\\Program Files (x86)', 'Steam.exe', function(err, path) {
 			if (err){
-				whereis('/R C:\\ Steam.exe', function(err, path) {
+				whereis('C:\\', 'Steam.exe', function(err, path) {
 					if (err){
 						console.log("Steam folder not found in C:\\");
 						_steamPath = "";
